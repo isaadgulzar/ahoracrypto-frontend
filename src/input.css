@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    ::-webkit-scrollbar {
+        @apply w-2 border;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-primary rounded-full;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply mt-[72px] bg-ternary;
+    }
+
+    .debug {
+        border: 1px solid red;
+    }
+
+    body {
+        @apply !font-montserrat overflow-x-hidden;
+    }
+
+    .white-bg-navbar {
+        @apply transition-[background-color] duration-[0ms] ease-linear z-[1000] w-full bg-[#ffffffe6] backdrop-blur-[10px] text-[#120747];
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .mobile-sidebar {
+        height: calc(100vh - 72.5px) !important;
+    }
+
+    .sidebar-item li.active {
+        @apply bg-ternary rounded;
+    }
+
+    .sidebar-item li.active p, .sidebar-item li.active svg {
+        @apply text-primary dark:!text-primary;
+    }
+    
+
+    .sidebar-item li.active:hover {
+        @apply bg-ternary bg-opacity-50;
+    }
+
+    .apexcharts-toolbar {
+        display: none !important;
+    }
+
+    .transaction-table-body tr:nth-child(even) {
+        @apply bg-ternary/30;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        @apply !text-white !bg-primary rounded-full h-7 w-7 mt-0.5 mx-1;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        @apply !text-sm;
+    }
+
+    .swiper-pagination .swiper-pagination-bullet {
+        @apply bg-primary;
+    }
+
+    @keyframes slideIn {
+        0% {
+          width: 72px;
+        }
+      
+        100% {
+          width: 250px;
+        }
+      }
+      
+      .slide-in {
+        animation: slideIn 0.2s linear forwards;
+      }
+      
+      @keyframes slideOut {
+        0% {
+          width: 250px;
+        }
+      
+        100% {
+          width: 72px;
+        }
+      }
+      
+      .slide-out {
+        animation: slideOut 0.2s linear forwards;
+      }
+
+    
+}
